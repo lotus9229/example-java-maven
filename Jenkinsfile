@@ -6,5 +6,10 @@ pipeline {
         git(url: 'https://github.com/lotus9229/example-java-maven.git', branch: 'master', credentialsId: 'githubnew')
       }
     }
+    stage('build') {
+      steps {
+        build 'mvn clean install'
+      }
+    }
   }
 }
